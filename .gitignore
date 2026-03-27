@@ -1,2 +1,18 @@
-# Ignore all folders that do not start with a period
-[^.]*/
+*
+!.config/
+!.gemini/
+!.zshrc
+!.zshenv
+!.gitignore
+!.gitconfig
+!./config
+!.bash_logout
+!.bashrc
+
+!.vscode-server/data/Machine/settings.json
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/keybindings.json
+!.vscode/snippets
+!.vscode/launch.json
+!.vscode/tasks.json

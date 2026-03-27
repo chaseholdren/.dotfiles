@@ -3,6 +3,8 @@
 # | System |
 # +--------+
 
+alias reload='source ~/.zshrc'
+
 # +----+
 # | ls |
 # +----+
@@ -78,4 +80,4 @@ alias dif="git diff --no-index"                                                 
 # +----------+
 
 # Folders
-alias c6="$HOME/c6"
+alias c6="echo $HOME/c6"
