@@ -1,0 +1,28 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    },
+    "enablePermanentToolApproval": true
+  },
+  "hasSeenIdeIntegrationNudge": true,
+  "ide": {
+    "enabled": true
+  },
+  "general": {
+    "sessionRetention": {
+      "enabled": true,
+      "maxAge": "30d",
+      "warningAcknowledged": true
+    },
+    "enableAutoUpdate": false
+  },
+  "ui": {
+    "inlineThinkingMode": "full",
+    "hideBanner": true,
+    "loadingPhrases": "off"
+  },
+  "experimental": {
+    "plan": true
+  }
+}

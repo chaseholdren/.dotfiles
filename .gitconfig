@@ -1,0 +1,18 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/chase/.local/share/mise/installs/github-cli/2.83.2/gh_2.83.2_linux_amd64/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/chase/.local/share/mise/installs/github-cli/2.83.2/gh_2.83.2_linux_amd64/bin/gh auth git-credential
+[user]
+	email = chaseholdren@users.noreply.github.com
+	name = Chase Holdren
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[core]
+	editor = code

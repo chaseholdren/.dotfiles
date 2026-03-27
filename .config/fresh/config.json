@@ -1,0 +1,11 @@
+{
+  "file_explorer": {
+    "show_hidden": true,
+    "show_gitignored": false
+  },
+  "editor": {
+    "ensure_final_newline_on_save": true,
+    "trim_trailing_whitespace_on_save": true
+  },
+  "active_keybinding_map": "vscode"
+}
