@@ -5,7 +5,6 @@
 !.zshenv
 !.gitignore
 !.gitconfig
-!./config
 !.bash_logout
 !.bashrc
 

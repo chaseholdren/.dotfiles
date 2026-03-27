@@ -1,0 +1,225 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+# https://starship.rs/config/
+
+format = """
+[](color_orange)\
+$os\
+$username\
+[ ](bg:color_yellow fg:color_orange)\
+${custom.repo_or_dir}\
+[](fg:color_yellow bg:color_aqua)\
+$git_branch\
+$git_status\
+[](fg:color_aqua bg:color_blue)\
+$rust\
+$golang\
+([ ](bg:color_blue)(fg:color_blue)${custom.bun_package})\
+$php\
+$java\
+$kotlin\
+$python\
+[](fg:color_blue bg:color_bg3)\
+$docker_context\
+$gcloud\
+[ ](fg:color_bg3)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+# Disable the blank line at the start of the prompt
+# add_newline = true
+
+[os]
+style = "bg:color_orange fg:color_fg0"
+disabled = false
+
+[username]
+show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[$user]($style)'
+
+[custom.repo_or_dir]
+command = "$STARSHIP_COMMANDS/repo-or-dir.zsh"
+when = true
+style = "bg:color_yellow"
+format = '[$output]($style)'
+disabled = false
+
+[directory]
+style = "fg:color_fg0 bg:color_yellow"
+truncation_length = 3
+truncation_symbol = " "
+format = "[ $path]($style)[$read_only]($read_only_style)[/ ]($style)"
+
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"home" = ""
+"chase" = "~"
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol$branch ](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_status]
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+
+[custom.repo_relative_path]
+command = "git rev-parse --show-prefix"
+when = "git rev-parse --show-prefix 2> /dev/null"
+style = "bg:#86BBD8"
+format = '[$output]($style)'
+disabled = false
+require_repo = true
+
+[custom.bun_package]
+command = "bun pm pkg get name | tr -d '\"' 2> /dev/null "
+when = true
+style = "bg:color_blue"
+format = '[$output]($style)'
+# detect_files = [ "package.json" ]
+# require_repo = true
+# shell = ["zsh", "-c"]
+
+[custom.git_status]
+description = "git status which calls git directly"
+command = "$STARSHIP_COMMANDS/git-status-prompt.zsh || true"
+when = "true"
+style = "bg:#FCA17D"
+# current master version of how to specify formats
+format = "[$output] ($style)"
+# shell = ["zsh", "-c"]
+disabled = true
+
+[nodejs]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:#86BBD8"
+format = '[ $symbol ]($style)'
+
+# https://starship.rs/config/#google-cloud-gcloud
+[gcloud]
+format = '[ $symbol]($style)[$project($region)]($style)'
+style = "bg:color_bg3"
+symbol = "☁️ "
+detect_env_vars = [ "GCP_PROJECT_ID" ]
+
+# https://starship.rs/config/#hostname
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:color_bg1"
+format = '[[$time](fg:color_fg0 bg:color_bg1)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+[mise]
+style = "bg:#86BBD8"
+healthy_symbol = ''
+unhealthy_symbol = 'unhealthy(bold red)'
+format = '[ $symbol$health]($style)'
+disabled = true
+
+[golang]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+disabled = true
+
+[gradle]
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+disabled = true
+
+[java]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+disabled = true
+
+[rust]
+symbol = ""
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+disabled = true
+
+
+
+
+
+
+
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
