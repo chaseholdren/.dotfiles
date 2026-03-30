@@ -2,6 +2,7 @@
 bun = "latest"
 gemini-cli = "latest"
 node = "24"
+"npm:@bomb.sh/tab" = "latest"
 "npm:@fresh-editor/fresh-editor" = "latest"
 pitchfork = "latest"
 usage = "latest"

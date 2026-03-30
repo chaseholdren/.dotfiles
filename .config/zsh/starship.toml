@@ -92,7 +92,7 @@ style = "bg:color_blue"
 format = '[$output]($style)'
 # detect_files = [ "package.json" ]
 require_repo = true
-shell = ["zsh", "-c"]
+# shell = ["zsh", "-c"]
 
 [custom.git_status]
 description = "git status which calls git directly"
