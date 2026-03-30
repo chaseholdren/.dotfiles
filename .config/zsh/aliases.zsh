@@ -1,3 +1,9 @@
+# +----------+
+# | Personal |
+# +----------+
+
+# Folders
+alias c6="echo $HOME/c6"
 
 # +--------+
 # | System |
@@ -73,11 +79,3 @@ alias gsub="git submodule update --remote"                                      
 alias gj="git-jump"                                                                               # Open in vim quickfix list files of interest (git diff, merged...)
 alias gitreporoot='git rev-parse --show-toplevel'
 alias dif="git diff --no-index"                                                                   # Diff two files even if not in git repo! Can add -w (don't diff whitespaces)
-
-
-# +----------+
-# | Personal |
-# +----------+
-
-# Folders
-alias c6="echo $HOME/c6"

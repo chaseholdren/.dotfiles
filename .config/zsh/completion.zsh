@@ -12,17 +12,17 @@
 # source ./gambit.zsh
 
 # Load more completions
-fpath=($ZSH_CONFIG_HOME/completions $fpath)
+fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 
 # Should be called before compinit
 zmodload zsh/complist
 
 # Use hjlk in menu selection (during completion)
 # Doesn't work well with interactive mode
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
 
 bindkey -M menuselect '^xg' clear-screen
 bindkey -M menuselect '^xi' vi-insert                      # Insert
@@ -75,7 +75,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' complete-options true
 
 zstyle ':completion:*' file-sort modification
-
 
 zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
 zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'

@@ -86,13 +86,13 @@ disabled = false
 require_repo = true
 
 [custom.bun_package]
-command = "bun pm pkg get name | tr -d '\"' 2> /dev/null "
+command = "bun pm pkg get name 2> /dev/null | tr -d '\"' 2> /dev/null"
 when = true
 style = "bg:color_blue"
 format = '[$output]($style)'
 # detect_files = [ "package.json" ]
-# require_repo = true
-# shell = ["zsh", "-c"]
+require_repo = true
+shell = ["zsh", "-c"]
 
 [custom.git_status]
 description = "git status which calls git directly"

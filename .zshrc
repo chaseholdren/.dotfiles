@@ -1,13 +1,11 @@
 #!/usr/bin/env zsh
 
-# Lines configured by zsh-newuser-install
-bindkey -e
-# End of lines configured by zsh-newuser-install
+bindkey -v
 
 # pretty colors
 eval "$(dircolors -b $ZSH_CONFIG_HOME/dircolors)"
 
-setopt CORRECT              # Spelling correction
+# setopt CORRECT              # Spelling correction
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
 setopt HIST_IGNORE_SPACE
@@ -31,15 +29,22 @@ git() {
   fi
 }
 
-eval "$(starship init zsh)"
-eval "$(~/.local/bin/mise activate zsh)"
-eval "$(pitchfork activate zsh)"
-
-source $ZSH_CONFIG_HOME/aliases
+source $ZSH_CONFIG_HOME/aliases.zsh
 source $ZSH_CONFIG_HOME/bindings.zsh
+source $ZSH_CONFIG_HOME/completion.zsh
 source $ZSH_CONFIG_HOME/mouse.zsh
 
-# git clone https://github.com/zsh-users/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS/zsh-syntax-highlighting
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# git clone https://github.com/zsh-users/zsh-completions.git $ZSH_PLUGINS/zsh-completions
+source $ZSH_PLUGINS/zsh-completions/zsh-completions.plugin.zsh
+
+eval "$(mise activate zsh)"
+eval "$(pitchfork activate zsh)"
+eval "$(starship init zsh)"
+
+for file in $ZSH_CONFIG_HOME/completions/*; do
+    source "$file"
+done

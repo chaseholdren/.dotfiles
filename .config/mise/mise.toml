@@ -1,12 +1,11 @@
 [tools]
+bun = "latest"
 gemini-cli = "latest"
 node = "24"
 "npm:@fresh-editor/fresh-editor" = "latest"
-oh-my-posh = "latest"
 pitchfork = "latest"
 usage = "latest"
 watchexec = "latest"
 
 [settings]
-lockfile = true
 experimental = true

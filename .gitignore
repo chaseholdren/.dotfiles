@@ -1,6 +1,14 @@
-*
-!.config/
-!.gemini/
+/*
+
+!/.config/
+/.config/*
+!/.config/zsh/
+!/.config/mise/
+
+!/.gemini/
+/.gemini/*
+!/.gemini/settings.json
+
 !.zshrc
 !.zshenv
 !.gitignore
@@ -8,7 +16,6 @@
 !.bash_logout
 !.bashrc
 
-!.vscode-server/data/Machine/settings.json
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/keybindings.json
