@@ -41,7 +41,6 @@ source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # git clone https://github.com/zsh-users/zsh-completions.git $ZSH_PLUGINS/zsh-completions
 source $ZSH_PLUGINS/zsh-completions/zsh-completions.plugin.zsh
 
-eval "$(~/.local/bin/mise activate zsh)"
 eval "$(pitchfork activate zsh)"
 eval "$(starship init zsh)"
 
@@ -49,3 +48,4 @@ for file in $ZSH_CONFIG_HOME/completions/*; do
     source "$file"
 done
 
+eval "$(~/.local/bin/mise activate zsh)"

@@ -5,6 +5,7 @@ node = "24"
 "npm:@bomb.sh/tab" = "latest"
 "npm:@fresh-editor/fresh-editor" = "latest"
 pitchfork = "latest"
+turbo = "latest"
 usage = "latest"
 watchexec = "latest"
 
