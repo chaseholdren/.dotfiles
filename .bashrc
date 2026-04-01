@@ -134,5 +134,3 @@ function gcommit() {
 
 eval "$(/home/chase/.local/bin/mise activate bash)"
 eval "$(pitchfork activate bash)"
-eval "$(mise activate bash --shims)"
-

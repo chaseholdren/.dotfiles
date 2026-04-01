@@ -1,5 +1,9 @@
 /*
 
+.bun
+.bun/
+.bun/**/*
+
 !/.config/
 /.config/*
 !/.config/zsh/
