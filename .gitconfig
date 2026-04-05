@@ -16,3 +16,7 @@
 	clean = git-lfs clean -- %f
 [core]
 	editor = code
+[branch]
+  autoSetupRebase = always
+[merge]
+  autoStash = true
