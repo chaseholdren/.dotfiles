@@ -1,0 +1,25 @@
+{
+  "git.repositoryScanIgnoredFolders": [
+    "**/*",
+    "!.dotfiles/*",
+  ],
+  "git.autoRepositoryDetection": false,
+  "git.scanRepositories": [],
+  "scm.autoReveal": false,
+  "git.detectSubmodules": false,
+  "git.detectWorktrees": false,
+  "git.ignoredRepositories": [
+    "c6/",
+    "c6"
+  ],
+  "git.ignoreSubmodules": true,
+  "git.repositoryScanMaxDepth": 0,
+  "git.showActionButton": {
+    "commit": false,
+    "publish": false,
+    "sync": false
+  },
+  "githubRepositories.autoFetch.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "local-history.enabled": 0
+}
