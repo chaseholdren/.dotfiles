@@ -6,13 +6,12 @@ format = """
 $os\
 $username\
 [ ](bg:color_yellow fg:color_orange)\
-${custom.repo_or_dir}\
+$directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
-$rust\
-$golang\
+$gcloud\
 ([ ](bg:color_blue)(fg:color_blue)${custom.bun_package})\
 $php\
 $java\
@@ -48,9 +47,8 @@ disabled = false
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
-truncation_length = 3
-truncation_symbol = " "
-format = "[ $path]($style)[$read_only]($read_only_style)[/ ]($style)"
+truncation_length = 5
+format = "[$path]($style)[$read_only]($read_only_style)[/ ]($style)"
 
 
 # Here is how you can shorten some long paths by text replacement
@@ -180,13 +178,6 @@ symbol = ""
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 disabled = true
-
-
-
-
-
-
-
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'

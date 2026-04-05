@@ -11,3 +11,4 @@ watchexec = "latest"
 
 [settings]
 experimental = true
+activate_aggressive = true

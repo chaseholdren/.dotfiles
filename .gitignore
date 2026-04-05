@@ -8,6 +8,9 @@
 /.config/*
 !/.config/zsh/
 !/.config/mise/
+!/.config/gcloud/
+/.config/gcloud/*
+!/.config/gcloud/configurations
 
 !/.gemini/
 /.gemini/*
